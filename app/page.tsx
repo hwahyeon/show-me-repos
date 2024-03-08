@@ -89,7 +89,7 @@ const Home: NextPage = () => {
             fontWeight="600"
             textColor="#58a6f2"
           >
-            Show me repos
+            Show me Repos
           </Text>
           <HStack
             as="form"

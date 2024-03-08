@@ -4,7 +4,7 @@ export const metadata = {
   title: "Show me repos",
   description: "Show me repos by Next.js 14",
   icons: {
-    icon: "/favicon.ico"
+    icon: "/favicon.svg"
   }
 };
 
