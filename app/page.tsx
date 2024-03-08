@@ -1,11 +1,12 @@
 "use client";
-
+import React from "react";
 import { Button } from "@chakra-ui/button";
 import { Input } from "@chakra-ui/input";
 import { Box, Container, HStack, Link, Text, VStack } from "@chakra-ui/layout";
 import type { NextPage } from "next";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
 
 interface IRepository {
   id: number;
@@ -125,15 +126,30 @@ const Home: NextPage = () => {
               Show
             </Button>
           </HStack>
-          <HStack textAlign="center">
-            {repositories.length > 0 && (
-              <ul>
+          {repositories.length > 0 && (
+            <Table variant="simple">
+              <Thead>
+                <Tr>
+                  <Th>Name</Th>
+                  <Th>Description</Th>
+                  <Th>Language</Th>
+                  <Th>Stars</Th>
+                  <Th>Updated</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
                 {repositories.map((repo) => (
-                  <li key={repo.id}>{repo.name}</li>
+                  <Tr key={repo.id}>
+                    <Td>{repo.name}</Td>
+                    <Td>{repo.description}</Td>
+                    <Td>{repo.language}</Td>
+                    <Td>{repo.stargazers_count}</Td>
+                    <Td>{repo.updated_at}</Td>
+                  </Tr>
                 ))}
-              </ul>
-            )}
-          </HStack>
+              </Tbody>
+            </Table>
+          )}
         </VStack>
       </Container>
     </Box>
