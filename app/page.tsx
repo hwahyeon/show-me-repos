@@ -84,6 +84,11 @@ const Home: NextPage = () => {
     }
   };
 
+  const formatDate = (dateString: string): string => {
+    const date = new Date(dateString);
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+  };
+
   return (
     <Box bg="#121d2f" minH="100vh" color="white">
       <Container pt="10">
@@ -148,7 +153,7 @@ const Home: NextPage = () => {
                     <Td>{repo.description}</Td>
                     <Td>{repo.language}</Td>
                     <Td>{repo.stargazers_count}</Td>
-                    <Td>{repo.updated_at}</Td>
+                    <Td>{formatDate(repo.updated_at)}</Td>
                   </Tr>
                 ))}
               </Tbody>
