@@ -11,6 +11,10 @@ import { Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
 interface IRepository {
   id: number;
   name: string;
+  description: string;
+  language: string;
+  stargazers_count: number;
+  updated_at: string;
 }
 
 interface IFormInput {
