@@ -1,1 +1,4 @@
-# show-me-repos
+# Show me Repos
+`NextJS 14` `Chakra UI` `TypeScript`
+
+
